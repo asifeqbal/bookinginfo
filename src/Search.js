@@ -13,16 +13,11 @@ class Search extends Component{
         render(){
             return(
                 <div className="row">
-                <input type="text"
-                placeholder="Search"
-                
-                />
-                <button className="ml-1 btn btn-primary"
-                onClick={()=>{
+                <input type="text" placeholder="Search" onChange ={(e)=>
+                {this.props.searchText(e.target.value)}} className="col-md-4 from-control" />
+                <button className="ml-1 btn btn-primary" onClick={()=>{
                     this.props.search("Hello world")
-                }}
-                >Search</button>
-                
+                }} className="btn btn-primary">Search</button>               
                 
                 </div>
             )

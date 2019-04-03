@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.svg'; 
 import './App.css';
 import Cards from './Cards';
 import Image from './Image';
@@ -14,10 +14,11 @@ class App extends Component {
    super(props);
 
    this.state={
-     couter:0
+     searchQuery:""
    };
   
     this.handleSearchClick = this.handleSearchClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
    handleSearchClick(data){
     console.log(data);
@@ -29,20 +30,21 @@ class App extends Component {
 
     handleChange(data){
         console.log(data);
+        let currentState = this.state;
+        currentState.searchQuery = data;
+        this.setState(currentState);
     }
  
  render(){
    return(
     <div className="container">                
 
-        <Search search={this.handleSearchClick} /> 
-        <label>{this.state.counter} </label>      
-      {/* <Search search={this.handleSearchClick}/>
-      <Cards/>
-      <Image/>
-      <Desc/>
-      <Product/> */}
-      <MovieList/>
+        <Search 
+        search={this.handleSearchClick} 
+        searchText={this.handleChange} /> 
+      {/* <label className="badge" >{this.state.counter} </label>       */}
+     
+      <MovieList search={this.state.searchQuery}  />
       
     
     

@@ -10,7 +10,7 @@ class MovieDetails extends Component {
    return(
     
         <div>
-            <h4>{this.props.details.name} </h4>
+            <h3>{this.props.detail.name}</h3>
         </div>
 
    );
