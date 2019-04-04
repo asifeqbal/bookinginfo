@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieDetails from '../movies/moviedetails';
 
+
 class MovieList extends Component {
  constructor(props){
    super(props);
@@ -10,13 +11,18 @@ class MovieList extends Component {
 
    }
  }
+
+ componentWillUnmount(){
+    console.log('i am movie Component Unmount');
+
+ }
  render(){
 
     let listOfMovieDisplayed ='';
      if (this.props.search==''){
 
          listOfMovieDisplayed = this.state.movies.map((movie,index)=>{
-          return <MovieDetails key={index} detail= {movie}/>
+          return <MovieDetails key={index} detail   = {movie}/>
              })
 
      }

@@ -6,16 +6,18 @@ import Image from './Image';
 import Desc from './Desc';
 import Product from './Product';
 import Search from './Search';
+import Toggler from './Toggler';
 
 import MovieList from './components/movies/movieList';
+import Register from './components/register/Register';
 
 class App extends Component {
  constructor(props){
    super(props);
 
    this.state={
-     searchQuery:""
-   };
+    searchQuery:""
+  };
   
     this.handleSearchClick = this.handleSearchClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -37,16 +39,18 @@ class App extends Component {
  
  render(){
    return(
-    <div className="container">                
+    <div className="container">      
 
-        <Search 
+        {/* <Search 
         search={this.handleSearchClick} 
-        searchText={this.handleChange} /> 
+        searchText={this.handleChange} />  */}
       {/* <label className="badge" >{this.state.counter} </label>       */}
      
-      <MovieList search={this.state.searchQuery}  />
+      {/* <MovieList search={this.state.searchQuery}  />
+
+      <Toggler/> */}
       
-    
+    <Register/>
     
      </div>
      
